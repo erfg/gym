@@ -1,0 +1,38 @@
+<div id="erfg-group-activities" class="container marketing">
+    <div class="table-responsive">
+        <table class="table table-condensed">
+            <thead>
+            <tr>
+                <th class="text-center" >Horario</th>
+                <th class="text-center" >Lunes</th>
+                <th class="text-center">Martes</th>
+                <th class="text-center">Miércoles</th>
+                <th class="text-center">Jueves</th>
+                <th class="text-center">Viernes</th>
+                <th class="text-center">Sábado</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr ng-repeat="(key,val) in datasourceForCurrentCenter()">
+                <td class="text-center">{{ key }}</td>
+                <td class="text-center group-activity" ng-class="{highlight: selectedActivity == activity}" ng-repeat="activity in val track by $index">{{ activity }}</td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+    <div>
+        <div class="col-xs-6">
+            <select class="form-control" ng-model="center">
+                <option ng-repeat="(keyCenter,valCenter) in datasource">{{ keyCenter }}</option>
+            </select>
+        </div>
+        <div class="col-xs-6">
+            <select class="form-control col-lg-6" ng-model="selectedActivity">
+                <option selected="selected">Resalta un tipo de actividad...</option>
+                <option ng-repeat="activity in activities">{{ activity }}</option>
+            </select>
+        </div>
+    </div>
+
+    <div id="map-canvas"></div>
+</div>
