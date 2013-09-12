@@ -5,14 +5,16 @@ angular.module('gymApp')
     return {
       restrict: 'E',
       link: function(scope, element, attrs) {
-          attrs.$observe('lat', refresh);
-          attrs.$observe('long', refresh);
 
-          function refresh(){
-              console.log("refresh");
+          scope.$watch('center', function() {
+              var location = scope.datasourceForCurrentCenter().location;
+              refresh(location.long, location.lat);
+          });
+
+          function refresh(long, lat){
               var mapOptions = {
                   zoom: attrs.zoom?parseInt(attrs.zoom):17,
-                  center: new google.maps.LatLng(attrs.lat, attrs.long),
+                  center: new google.maps.LatLng(attrs.lat?attrs.lat:lat, attrs.long?attrs.long:long),
                   mapTypeId: google.maps.MapTypeId.ROADMAP,
                   styles: [
                       {
