@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('gymApp')
-  .directive('map', function () {
+  .directive('map', function (GoogleMaps) {
     return {
       restrict: 'E',
       link: function(scope, element, attrs) {
