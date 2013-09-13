@@ -16,14 +16,14 @@ app.controller('GroupActivitiesCtrl', function ($scope) {
                               '10 a 11': ['Aero-Combat', 'Body Tonic', 'Bailes de Salón', 'Abdominales', 'Pilates', 'T-Extreme'],
                               '11 a 12': ['Yoga', 'Step Avanzado', 'Tonificación', 'T-Extreme', 'Latinos', 'Body Tonic'],
                               '12 a 13': ['Tonificación', 'Pilates', 'Zumba', 'Abdominales', 'Body Tonic', 'Aero-Combat']},
-                   location: {long: '-3.6498084', lat:'40.3819613'}},
+                   location: {longitude: '-3.6498084', latitude:'40.3819613'}},
 
         Moratalaz: {schedule: {'08 a 09': ['Zumba', 'T-Extreme', 'Tonificación', 'Latinos', 'Zumba', 'Aero-Combat'],
                                '09 a 10': ['T-Extreme', 'Yoga', 'Pilates', 'Step Avanzado', 'Bailes de Salón', 'Abdominales'],
                                '10 a 11': ['Aero-Combat', 'Body Tonic', 'Bailes de Salón', 'Abdominales', 'Pilates', 'T-Extreme'],
                                '11 a 12': ['Yoga', 'Step Avanzado', 'Tonificación', 'T-Extreme', 'Latinos', 'Body Tonic'],
                                '12 a 13': ['Tonificación', 'Pilates', 'Zumba', 'Abdominales', 'Body Tonic', 'Aero-Combat']},
-                    location: {long: '-3.6466968', lat:'40.4079307'}}
+                    location: {longitude: '-3.6466968', latitude:'40.4079307'}}
     };
 
     $scope.datasourceForCurrentCenter = function () {
