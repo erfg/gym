@@ -4,7 +4,7 @@ var app = angular.module('gymApp');
 app.controller('GroupActivitiesCtrl', function ($scope) {
 
     $scope.selectedActivity = 'Resalta un tipo de actividad...';
-
+    $scope.selectedCenter = {};
     $scope.center = 'Vallecas';
 
     $scope.activities = ['Abdominales', 'Aero-Combat', 'Bailes de Salón', 'Body Tonic', 'Latinos', 'Pilates', 'Step Avanzado',
@@ -26,7 +26,7 @@ app.controller('GroupActivitiesCtrl', function ($scope) {
                     location: {longitude: '-3.6466968', latitude:'40.4079307'}}
     };
 
-    $scope.datasourceForCurrentCenter = function () {
-        return $scope.datasource[$scope.center];
-    };
+    $scope.$watch('center', function (newValue) {
+        $scope.selectedCenter = $scope.datasource[newValue];
+    });
 });

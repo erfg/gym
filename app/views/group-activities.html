@@ -13,7 +13,7 @@
             </tr>
             </thead>
             <tbody>
-            <tr ng-repeat="(key,val) in datasourceForCurrentCenter().schedule">
+            <tr ng-repeat="(key,val) in selectedCenter.schedule">
                 <td class="text-center">{{ key }}</td>
                 <td class="text-center group-activity" ng-class="{highlight: selectedActivity == activity}" ng-repeat="activity in val track by $index">{{ activity }}</td>
             </tr>
@@ -34,5 +34,5 @@
         </div>
     </div>
 
-    <map latitude="{{ datasourceForCurrentCenter().location.latitude }}" longitude="{{ datasourceForCurrentCenter().location.longitude }}"></map>
+    <map location="selectedCenter.location"></map>
 </div>
