@@ -1,9 +1,9 @@
 'use strict';
 
 angular.module('gymApp')
-    .directive('map', function (GoogleMaps) {
+    .directive('erfgMap', function (GoogleMaps) {
         return {
-          restrict: 'E',
+          restrict: 'EC',
           scope: {
               location: '='
           },
