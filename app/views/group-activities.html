@@ -1,15 +1,44 @@
 <div id="erfg-group-activities" class="container marketing">
+    <h1>Nuestros centros</h1>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris ut pulvinar massa. Phasellus in leo justo. Curabitur tincidunt eros sit amet eros malesuada, iaculis pharetra lorem aliquet. Interdum et malesuada fames ac ante ipsum primis in faucibus. Aenean quis urna ut neque posuere dictum at ut odio. Nam rhoncus, purus sit amet molestie venenatis, justo odio volutpat ligula, id egestas enim eros vel metus. Ut vel euismod quam. Duis urna lacus, adipiscing id libero non, bibendum ultricies purus. Duis iaculis, nunc nec dictum iaculis, magna justo rutrum elit, imperdiet adipiscing leo metus quis eros.</p>
+    <div class="form-group">
+        <label for="centerSelect">Selecciona uno de nuestros centros</label>
+
+        <select id="centerSelect" class="form-control" ng-model="center">
+            <option ng-repeat="(keyCenter,valCenter) in datasource">{{ keyCenter }}</option>
+        </select>
+    </div>
+    <hr class="centers-divider">
+    <h1>Clases colectivas</h1>
+
+    <div class="row">
+        <div class="form-group col-md-6">
+            <label for="activityTypeSelect">Selecciona un grupo de clases</label>
+            <select id="activityTypeSelect" class="form-control" ng-model="center">
+                <option ng-repeat="(keyCenter,valCenter) in datasource">{{ keyCenter }}</option>
+            </select>
+        </div>
+        <div class="form-group col-md-6">
+            <label for="activitySelect">Resalta una de las actividades</label>
+            <select id="activitySelect" class="form-control" ng-model="selectedActivity">
+                <option>Selecciona la actividad a resaltar</option>
+                <option ng-repeat="activity in activities">{{ activity }}</option>
+            </select>
+        </div>
+    </div>
+
+    <hr class="centers-divider">
     <div class="table-responsive">
         <table class="table table-condensed">
             <thead>
             <tr>
-                <th class="text-center" >Horario</th>
-                <th class="text-center" >Lunes</th>
-                <th class="text-center">Martes</th>
-                <th class="text-center">Miércoles</th>
-                <th class="text-center">Jueves</th>
-                <th class="text-center">Viernes</th>
-                <th class="text-center">Sábado</th>
+                <th class="text-center hour"></th>
+                <th class="text-center" >L</th>
+                <th class="text-center">M</th>
+                <th class="text-center">X</th>
+                <th class="text-center">J</th>
+                <th class="text-center">V</th>
+                <th class="text-center">S</th>
             </tr>
             </thead>
             <tbody>
@@ -20,19 +49,14 @@
             </tbody>
         </table>
     </div>
-    <div>
-        <div class="col-xs-6">
-            <select class="form-control" ng-model="center">
-                <option ng-repeat="(keyCenter,valCenter) in datasource">{{ keyCenter }}</option>
-            </select>
-        </div>
-        <div class="col-xs-6">
-            <select class="form-control col-lg-6" ng-model="selectedActivity">
-                <option selected="selected">Resalta un tipo de actividad...</option>
-                <option ng-repeat="activity in activities">{{ activity }}</option>
-            </select>
-        </div>
+
+    <div class="alert alert-danger alert-dismissable">
+        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+        Sport Extreme se reserva el derecho de cambiar o modificar tanto el horario del centro, como de las clases y los monitores de las mismas.
     </div>
 
+    <hr class="centers-divider">
+    <h1>Dónde estamos</h1>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
     <erfg-map location="selectedCenter.location"></erfg-map>
 </div>

@@ -11,6 +11,10 @@ angular.module('gymApp', ['ngRoute', 'ngAnimate'])
         templateUrl: 'views/group-activities.html',
         controller: 'GroupActivitiesCtrl'
       })
+      .when('/prueba-tablas', {
+        templateUrl: 'views/prueba-tablas.html',
+        controller: 'PruebaTablasCtrl'
+      })
       .otherwise({
         redirectTo: '/'
       });

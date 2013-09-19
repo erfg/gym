@@ -12,8 +12,10 @@
     <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
 
       <!-- build:css(.tmp) styles/main.css -->
+      <link href='http://fonts.googleapis.com/css?family=Bubbler+One&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
       <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css">
       <link rel="stylesheet" href="styles/main.css">
+      <link rel="stylesheet" href="styles/extra.css">
       <!-- endbuild -->
 </head>
   <body ng-app="gymApp">
@@ -27,7 +29,45 @@
     <![endif]-->
 
     <!-- Add your site or application content here -->
+    <div class="navbar-wrapper">
+        <div class="container">
+
+            <div class="navbar navbar-default navbar-static-top">
+                <div class="container">
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                        <a class="navbar-brand" href="#">SPORT EXTREME</a>
+                    </div>
+                    <div class="navbar-collapse collapse">
+                        <ul class="nav navbar-nav">
+                            <li class="active"><a href="#">Inicio</a></li>
+                            <li><a href="#group-activities">Centros</a></li>
+                            <li><a href="#where-we-are">Nuestros precios</a></li>
+                            <li><a href="#prueba-tablas">Tablas</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
     <div class="container" ng-view=""></div>
+    <footer class="container">
+        <div class="row">
+            <p class="bubbler-one col-sm-8">Recuerda seguirnos en las redes sociales...</p>
+            <div class="col-sm-4">
+                <div class="social">
+                    <a href="https://www.facebook.com/pages/Sport-Extreme/501368069955746"><img border="0" src="images/facebook.png" alt="facebook" width="104" height="104"></a>
+                    <a href="https://www.facebook.com/pages/Sport-Extreme/501368069955746"><img border="0" src="images/twitter.png" alt="twitter" width="104" height="104"></a>
+                    <a href="https://www.facebook.com/pages/Sport-Extreme/501368069955746"><img border="0" src="images/plus.png" alt="plus" width="104" height="104"></a>
+                </div>
+            </div>
+        </div>
+    </footer>
 
     <!-- Google Analytics: change UA-XXXXX-X to be your site's ID -->
      <script>
@@ -54,6 +94,8 @@
     <script src="scripts/controllers/group-activities.js"></script>
     <script src="scripts/directives/erfg-map.js"></script>
     <script src="scripts/services/Google-Maps.js"></script>
+    <script src="scripts/services/Gym-Datasource.js"></script>
+    <script src="scripts/controllers/prueba-tablas.js"></script>
     <!-- endbuild -->
 </body>
 </html>

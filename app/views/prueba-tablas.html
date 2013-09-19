@@ -1,0 +1,27 @@
+<div id="erfg-group-activities" class="container marketing">
+    <div class="table-responsive">
+        <table class="table">
+            <thead>
+            <tr>
+                <th class="text-center hour"></th>
+                <th class="text-center">L</th>
+                <th class="text-center">M</th>
+                <th class="text-center">X</th>
+                <th class="text-center">J</th>
+                <th class="text-center">V</th>
+                <th class="text-center">S</th>
+            </tr>
+            </thead>
+            <tbody>
+                <tr class="quarter-cell" ng-repeat="row in datasource">
+                    <td rowspan="{{ item.quarters }}" ng-repeat="item in row">
+                        <div data-toggle="tooltip" title="{{ item.tooltip }}" class="text-center {{ item.class }}">
+                            <div>{{ item.text }}</div>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
