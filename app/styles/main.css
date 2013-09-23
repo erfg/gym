@@ -47,50 +47,81 @@ footer .social {
   margin-top: 10px;
 }
 
-table > tbody > tr.quarter-cell {
-  height: 14px;
-}
-
 table > thead th.hour {
-    width: 10%;
-    min-width: 60px;
+  width: 13%;
+  min-width: 60px;
 }
 
 table > thead th {
-  width: 15%;
+  width: 14.5%;
   min-width: 90px;
 }
 
-table > tbody > tr.quarter-cell > td {
-  padding: 0px;
+table > tbody {
   border: 2px solid #DDDDDD;
 }
 
-table > tbody > tr.quarter-cell > td > div {
-  margin: 0 auto;
-  width: 96%;
-  height: 90%;
-  /* Mirar por qué lo del overflow:auto es necesario para rellenar la celda en altura */
-  overflow: auto;
+table > tbody > tr.quarter-cell {
+  height: 20px;
 }
 
-table > tbody > tr.quarter-cell > td > div > div {
+table > tbody > tr.quarter-cell > td {
+  border-right: 2px solid #DDDDDD;
+  padding: 0px;
   position: relative;
-  top: 30%;
-  font-size: 12px;
-  overflow: hidden;
-  padding: 0 10px;
 }
 
-.busy {
+table > tbody > tr.quarter-cell > td.hour {
+  border-bottom: 2px solid #DDDDDD;
+}
+
+/*table > tbody > tr.quarter-cell > td {*/
+
+/*padding: 0px;*/
+
+/*border-left: 2px solid #DDDDDD;*/
+
+/*border-right: 2px solid #DDDDDD;*/
+
+/*border-top: 0px;*/
+
+/*border-bottom: 0px;*/
+
+/*overflow: hidden;*/
+
+/*table > tbody > tr.quarter-cell > td > div {*/
+
+/*margin: 0 auto;*/
+
+/*width: 96%;*/
+
+/*height: 90%;*/
+
+/*overflow: auto;*/
+
+/*table > tbody > tr.quarter-cell > td > div > div {*/
+
+/*position: absolute;*/
+
+/*margin: auto;*/
+
+/*font-size: 14px;*/
+
+/*padding: 0 10px;*/
+
+div.busy {
   color: #ffffff;
   background-color: indianred;
-  border-radius: 8px;
+  border-radius: 10px;
+  width: 96%;
+  height: 90%;
+  margin: 2% 2%;
+  overflow: auto;
+  opacity: 0.95;
 }
 
 .centers-divider {
   margin: 20px 0;
-  /* Space out the Bootstrap <hr> more */
 }
 
 #erfg-table {

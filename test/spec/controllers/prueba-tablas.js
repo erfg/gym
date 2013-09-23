@@ -3,7 +3,7 @@
 describe('Controller: PruebaTablasCtrl', function () {
 
   // load the controller's module
-  beforeEach(module('gymApp'));
+//  beforeEach(module('gymApp'));
 
   var PruebaTablasCtrl,
     scope;
@@ -16,7 +16,4 @@ describe('Controller: PruebaTablasCtrl', function () {
     });
   }));
 
-  it('should attach a list of awesomeThings to the scope', function () {
-    expect(scope.awesomeThings.length).toBe(3);
-  });
 });

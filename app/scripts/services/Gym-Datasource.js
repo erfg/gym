@@ -18,6 +18,7 @@ angular.module('gymApp')
           result.setUTCHours(parseInt(hour[0]));
           result.setUTCMinutes(parseInt(hour[1]));
           result.setUTCSeconds(0);
+          result.setUTCMilliseconds(0);
           return result;
       }
 
