@@ -14,10 +14,9 @@
             </thead>
             <tbody>
                 <tr class="quarter-cell" ng-repeat="row in datasource">
-                    <td class="{{ item.class }}" rowspan="{{ item.quarters }}" ng-repeat="item in row">
-                        <div class="{{ item.class }}">
-                            <div title="{{ item.tooltip }}" class="text-center pollas">{{ item.text }}</div>
-                        </div>
+                    <td title="{{ item.tooltip }}" class="{{ item.class }}" rowspan="{{ item.quarters }}" ng-repeat="item in row">
+                        <div class="{{ item.class }}"></div>
+                        <div class="text-center text">{{ item.text }}</div>
                     </td>
                 </tr>
             </tbody>

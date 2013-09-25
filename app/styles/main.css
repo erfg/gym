@@ -62,62 +62,46 @@ table > tbody {
 }
 
 table > tbody > tr.quarter-cell {
-  height: 20px;
+  height: 15px;
 }
 
 table > tbody > tr.quarter-cell > td {
   border-right: 2px solid #DDDDDD;
   padding: 0px;
   position: relative;
+  border-top: 0;
 }
 
 table > tbody > tr.quarter-cell > td.hour {
   border-bottom: 2px solid #DDDDDD;
+  color: #5A5A5A;
+  font-size: 14px;
+  font-weight: bold;
 }
 
-/*table > tbody > tr.quarter-cell > td {*/
-
-/*padding: 0px;*/
-
-/*border-left: 2px solid #DDDDDD;*/
-
-/*border-right: 2px solid #DDDDDD;*/
-
-/*border-top: 0px;*/
-
-/*border-bottom: 0px;*/
-
-/*overflow: hidden;*/
-
-/*table > tbody > tr.quarter-cell > td > div {*/
-
-/*margin: 0 auto;*/
-
-/*width: 96%;*/
-
-/*height: 90%;*/
-
-/*overflow: auto;*/
-
-/*table > tbody > tr.quarter-cell > td > div > div {*/
-
-/*position: absolute;*/
-
-/*margin: auto;*/
-
-/*font-size: 14px;*/
-
-/*padding: 0 10px;*/
-
 div.busy {
-  color: #ffffff;
   background-color: indianred;
   border-radius: 10px;
-  width: 96%;
+  width: 94%;
   height: 90%;
-  margin: 2% 2%;
+  margin: 2% 3.5%;
   overflow: auto;
   opacity: 0.95;
+  z-index: 100;
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  -o-box-shadow: 0 0 2px 2px #BF8C98;
+  -ms-box-shadow: 0 0 2px 2px #BF8C98;
+  box-shadow: 0 0 2px 2px #BF8C98;
+}
+
+.busy > div.text {
+    color: #ffffff;
+    z-index: 200;
+    position: relative;
+    text-shadow: 0.1em 0.1em 0.2em #5a5a5a;
 }
 
 .centers-divider {
