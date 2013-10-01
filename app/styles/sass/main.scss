@@ -1,5 +1,18 @@
+// Modules and Variables
+@import "partials/base";
+
+// Partials
+@import "partials/reset";
+@import "partials/typography";
+@import "partials/buttons";
+@import "partials/figures";
+@import "partials/grids";
+
+// Third-party
+//@import "vendor/***********";
+
 body {
-  background: url("../images/body-bg.png") top center no-repeat #300d0f;
+  background: url("../../images/body-bg.png") top center no-repeat #300d0f;
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   color: #333;
 }
@@ -98,10 +111,10 @@ div.busy {
 }
 
 .busy > div.text {
-    color: #ffffff;
-    z-index: 200;
-    position: relative;
-    text-shadow: 0.1em 0.1em 0.2em #5a5a5a;
+  color: #ffffff;
+  z-index: 200;
+  position: relative;
+  text-shadow: 0.1em 0.1em 0.2em #5a5a5a;
 }
 
 .centers-divider {
