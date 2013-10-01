@@ -1,0 +1,73 @@
+#erfg-table {
+  margin-top: 20px;
+}
+
+#erfg-group-activities td {
+  vertical-align: middle;
+}
+
+.group-activity {
+  background: #ffffff;
+  color: #5a5a5a;
+  border-radius: 25px;
+}
+
+#erfg-group-activities {
+  background: #fafafa;
+  padding: 30px;
+  margin-top: 10px;
+}
+
+table > thead th.hour {
+  width: 13%;
+  min-width: 60px;
+}
+
+table > thead th {
+  width: 14.5%;
+  min-width: 90px;
+}
+
+table > tbody {
+  border: 2px solid #DDDDDD;
+}
+
+table > tbody > tr.quarter-cell {
+  height: 15px;
+}
+
+table > tbody > tr.quarter-cell > td {
+  border-right: 2px solid #DDDDDD;
+  padding: 0px;
+  position: relative;
+  border-top: 0;
+}
+
+table > tbody > tr.quarter-cell > td.hour {
+  border-bottom: 2px solid #DDDDDD;
+  color: #5A5A5A;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+div.busy {
+  background-color: indianred;
+  border-radius: 10px;
+  width: 94%;
+  height: 90%;
+  margin: 2% 3.5%;
+  overflow: auto;
+  opacity: 0.95;
+  z-index: 100;
+  position: absolute;
+  top: 0;
+  left: 0;
+  @include box-shadow(0 0 2px 2px #BF8C98);
+}
+
+.busy > div.text {
+  color: #ffffff;
+  z-index: 200;
+  position: relative;
+  text-shadow: 0.1em 0.1em 0.2em #5a5a5a;
+}

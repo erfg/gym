@@ -1,0 +1,165 @@
+/* line 4, ../sass/partials/_animations.scss */
+.group-activity.highlight-add,
+.group-activity.highlight-remove {
+  -webkit-transition: all 0.3s linear;
+  -webkit-transition-delay: 0s;
+  -moz-transition: all 0.3s linear 0s;
+  -o-transition: all 0.3s linear 0s;
+  transition: all 0.3s linear 0s;
+}
+
+/* line 9, ../sass/partials/_animations.scss */
+.group-activity.highlight-add,
+.group-activity.highlight-remove.highlight-remove-active {
+  background: #ffffff;
+  color: #5a5a5a;
+}
+
+/* line 16, ../sass/partials/_animations.scss */
+.group-activity.highlight,
+.group-activity.highlight-remove,
+.group-activity.highlight-add.highlight-add-active {
+  background: #c96264;
+  color: #f5f5f5;
+}
+
+/* line 1, ../sass/partials/_figures.scss */
+erfg-map, .erfg-map {
+  display: block;
+  width: 100%;
+  height: 450px;
+  margin-top: 30px;
+  -webkit-box-shadow: 0 0 2px 2px #bf8c98;
+  -moz-box-shadow: 0 0 2px 2px #bf8c98;
+  box-shadow: 0 0 2px 2px #bf8c98;
+}
+
+/* line 2, ../sass/partials/_footer.scss */
+footer {
+  margin-top: 30px;
+}
+
+/* line 6, ../sass/partials/_footer.scss */
+footer p {
+  color: #9c1000;
+  font-size: 50px;
+}
+
+/* line 11, ../sass/partials/_footer.scss */
+footer .social {
+  text-align: center;
+}
+
+/* line 1, ../sass/partials/_table.scss */
+#erfg-table {
+  margin-top: 20px;
+}
+
+/* line 5, ../sass/partials/_table.scss */
+#erfg-group-activities td {
+  vertical-align: middle;
+}
+
+/* line 9, ../sass/partials/_table.scss */
+.group-activity {
+  background: #ffffff;
+  color: #5a5a5a;
+  border-radius: 25px;
+}
+
+/* line 15, ../sass/partials/_table.scss */
+#erfg-group-activities {
+  background: #fafafa;
+  padding: 30px;
+  margin-top: 10px;
+}
+
+/* line 21, ../sass/partials/_table.scss */
+table > thead th.hour {
+  width: 13%;
+  min-width: 60px;
+}
+
+/* line 26, ../sass/partials/_table.scss */
+table > thead th {
+  width: 14.5%;
+  min-width: 90px;
+}
+
+/* line 31, ../sass/partials/_table.scss */
+table > tbody {
+  border: 2px solid #DDDDDD;
+}
+
+/* line 35, ../sass/partials/_table.scss */
+table > tbody > tr.quarter-cell {
+  height: 15px;
+}
+
+/* line 39, ../sass/partials/_table.scss */
+table > tbody > tr.quarter-cell > td {
+  border-right: 2px solid #DDDDDD;
+  padding: 0px;
+  position: relative;
+  border-top: 0;
+}
+
+/* line 46, ../sass/partials/_table.scss */
+table > tbody > tr.quarter-cell > td.hour {
+  border-bottom: 2px solid #DDDDDD;
+  color: #5A5A5A;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+/* line 53, ../sass/partials/_table.scss */
+div.busy {
+  background-color: indianred;
+  border-radius: 10px;
+  width: 94%;
+  height: 90%;
+  margin: 2% 3.5%;
+  overflow: auto;
+  opacity: 0.95;
+  z-index: 100;
+  position: absolute;
+  top: 0;
+  left: 0;
+  -webkit-box-shadow: 0 0 2px 2px #bf8c98;
+  -moz-box-shadow: 0 0 2px 2px #bf8c98;
+  box-shadow: 0 0 2px 2px #bf8c98;
+}
+
+/* line 68, ../sass/partials/_table.scss */
+.busy > div.text {
+  color: #ffffff;
+  z-index: 200;
+  position: relative;
+  text-shadow: 0.1em 0.1em 0.2em #5a5a5a;
+}
+
+/* line 1, ../sass/partials/_typography.scss */
+.bubbler-one {
+  font-family: 'Bubbler One', sans-serif;
+}
+
+/* line 9, ../sass/screen.scss */
+body {
+  background: url('/images/body-bg.png?1378231868') top center no-repeat #300d0f;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  color: #333;
+}
+
+/* line 15, ../sass/screen.scss */
+#erfg-content {
+  background: #fafafa;
+  padding: 30px;
+  margin-top: -80px;
+  padding-top: 50px;
+}
+
+/* line 22, ../sass/screen.scss */
+.marketing {
+  border-radius: 10px;
+  box-shadow: inset 0 0 8px #000000;
+}

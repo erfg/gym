@@ -1,0 +1,19 @@
+// Animation for group activity selection (highlight)
+
+.group-activity.highlight-add,
+.group-activity.highlight-remove {
+  @include single-transition(all, 0.3s, linear, 0s);
+}
+
+.group-activity.highlight-add,
+.group-activity.highlight-remove.highlight-remove-active {
+  background: #ffffff;
+  color: #5a5a5a;
+}
+
+.group-activity.highlight,
+.group-activity.highlight-remove,
+.group-activity.highlight-add.highlight-add-active {
+  background: #c96264;
+  color: #f5f5f5;
+}
