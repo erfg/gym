@@ -9,5 +9,5 @@ angular.module('gymApp')
     $scope.rowsArray = function() {
         var result = new Array($scope.rows);
         return result;
-    }
+    };
 });
