@@ -95,38 +95,202 @@ angular.module('gymApp')
           return result;
       }
 
-      this.dictionary = {
-          subdivisionMinutes: 15,
-          startingAt: "9:00",
-          endingAt: "14:00",
-          activities: {
-              lunes: [
-                  {name: "Zumba", starts: "9:30", ends: "10:30"},
-                  {name: "Step", starts: "11:15", ends: "12:15"}
-              ],
-              martes: [
-                  {name: "Abdominales", starts: "12:00", ends: "13:00"}
-              ],
-              miercoles: [
-                  {name: "Body Tonic", starts: "9:00", ends: "10:00"},
-                  {name: "Step", starts: "10:00", ends: "11:00"}
-              ],
-              jueves: [
-                  {name: "Body Tonic", starts: "9:45", ends: "10:45"},
-                  {name: "Abdominales", starts: "13:00", ends: "13:45"}
-              ],
-              viernes: [
-                  {name: "Zumba", starts: "9:00", ends: "9:30"},
-                  {name: "Body Tonic", starts: "11:15", ends: "12:15"}
-              ],
-              sabado: [
-                  {name: "Latinos", starts: "9:30", ends: "10:00"},
-                  {name: "Yoga", starts: "10:00", ends: "10:45"}
-              ]
-          }
+      this.ds = [{name: "Fuenlabrada",
+                  terms: [{name: "Octubre",
+                           schedules: [{
+                              name: "Clases colectivas",
+                              subdivisionMinutes: 15,
+                              days: 6,
+                              startingAt: "9:00",
+                              endingAt: "22:00",
+                              activities: {
+                                  lunes: [
+                                      {name: "Zumba", level:"", starts: "9:30", ends: "10:30"},
+                                      {name: "T-Extreme", level: "", starts: "11:15", ends: "12:15"},
+                                      {name: "* Step *", level: "Principiantes", starts: "12:15", ends: "12:45"},
+                                      {name: "CAD/Gluteo", level: "", starts: "15:30", ends: "16:00"},
+                                      {name: "Abdominales", level: "", starts: "17:30", ends: "18:00"},
+                                      {name: "Zumba", level: "", starts: "18:00", ends: "19:00"},
+                                      {name: "Step", level: "", starts: "19:00", ends: "20:00"},
+                                      {name: "Abdominales", level: "", starts: "20:00", ends: "20:30"},
+                                      {name: "Pilates", level: "", starts: "20:30", ends: "21:30"}
+                                  ],
+                                  martes: [
+                                      {name: "Pilates", level: "", starts: "10:15", ends: "11:15"},
+                                      {name: "Abdominales", level: "", starts: "12:15", ends: "12:45"},
+                                      {name: "Body Tonic", level: "", starts: "14:30", ends: "15:30"},
+                                      {name: "* Pequebailes *", level: "", starts: "17:00", ends: "18:00"},
+                                      {name: "Pilates", level: "", starts: "18:00", ends: "19:00"},
+                                      {name: "Funky", level: "", starts: "19:00", ends: "20:00"},
+                                      {name: "CAD/Gluteo", level: "", starts: "20:00", ends: "20:30"},
+                                      {name: "Body Tonic", level: "", starts: "20:30", ends: "21:30"}
+                                  ],
+                                  miercoles: [
+                                      {name: "Body Tonic", level: "", starts: "9:30", ends: "10:30"},
+                                      {name: "Step", level: "Nivel Alto", starts: "11:15", ends: "12:15"},
+                                      {name: "CAD/Gluteo", level: "", starts: "12:15", ends: "12:45"},
+                                      {name: "Abdominales", level: "", starts: "15:30", ends: "16:00"},
+                                      {name: "Abdominales", level: "", starts: "17:30", ends: "18:00"},
+                                      {name: "T-Extreme", level: "", starts: "18:00", ends: "19:00"},
+                                      {name: "Aerocombat", level: "", starts: "19:00", ends: "20:00"},
+                                      {name: "Abdominales", level: "", starts: "20:00", ends: "20:30"},
+                                      {name: "Zumba", level: "", starts: "20:30", ends: "21:30"}
+                                  ],
+                                  jueves: [
+                                      {name: "Pilates", level: "", starts: "10:15", ends: "11:15"},
+                                      {name: "Abdominales", level: "", starts: "12:15", ends: "12:45"},
+                                      {name: "T-Extreme", level: "", starts: "14:30", ends: "15:30"},
+                                      {name: "* Pequebailes *", level: "", starts: "17:00", ends: "18:00"},
+                                      {name: "Pilates", level: "", starts: "18:00", ends: "19:00"},
+                                      {name: "CAD/Gluteo", level: "", starts: "19:00", ends: "19:30"},
+                                      {name: "Latinos", level: "", starts: "19:30", ends: "20:30"},
+                                      {name: "Yoga", level: "", starts: "20:30", ends: "21:30"}
+                                  ],
+                                  viernes: [
+                                      {name: "Body Tonic", level: "", starts: "10:15", ends: "11:15"},
+                                      {name: "Zumba", level: "", starts: "11:15", ends: "12:15"},
+                                      {name: "Urban Dance", level: "", starts: "14:30", ends: "15:15"},
+                                      {name: "Running", level: "", starts: "18:00", ends: "19:00"},
+                                      {name: "Bailes de salón", level: "", starts: "20:00", ends: "21:00"}
+                                  ],
+                                  sabado: [
+                                      {name: "Body Tonic", level: "", starts: "11:15", ends: "12:15"}
+                                  ]} // ACTIVITIES
+                           },
+                               {
+                                   name: "Indoor Cycling",
+                                   subdivisionMinutes: 15,
+                                   days: 7,
+                                   startingAt: "8:00",
+                                   endingAt: "23:00",
+                                   activities: {
+                                       lunes: [
+                                           {name: "Virtual", level: "", starts: "9:00", ends: "9:45"},
+                                           {name: "Normal", level: "", starts: "10:30", ends: "11:15"},
+                                           {name: "Virtual", level: "", starts: "11:30", ends: "12:15"},
+                                           {name: "Normal", level: "", starts: "14:30", ends: "15:15"},
+                                           {name: "Virtual", level: "", starts: "17:30", ends: "18:15"},
+                                           {name: "Normal", level: "", starts: "18:30", ends: "19:15"},
+                                           {name: "Normal", level: "", starts: "19:30", ends: "20:15"},
+                                           {name: "Virtual", level: "", starts: "21:30", ends: "22:15"}
+                                       ],
+                                       martes: [
+                                           {name: "Virtual", level: "", starts: "8:00", ends: "8:45"},
+                                           {name: "Normal", level: "", starts: "9:30", ends: "10:15"},
+                                           {name: "Normal", level: "", starts: "11:15", ends: "12:00"},
+                                           {name: "Virtual", level: "", starts: "15:30", ends: "16:15"},
+                                           {name: "Virtual", level: "", starts: "17:00", ends: "17:45"},
+                                           {name: "Normal", level: "", starts: "19:00", ends: "19:45"},
+                                           {name: "Normal", level: "", starts: "20:00", ends: "20:45"},
+                                           {name: "Virtual", level: "", starts: "21:00", ends: "21:45"}
+                                       ],
+                                       miercoles: [
+                                           {name: "Virtual", level: "", starts: "9:00", ends: "9:45"},
+                                           {name: "Normal", level: "", starts: "10:30", ends: "11:15"},
+                                           {name: "Virtual", level: "", starts: "11:30", ends: "12:15"},
+                                           {name: "Normal", level: "", starts: "14:30", ends: "15:15"},
+                                           {name: "Virtual", level: "", starts: "18:00", ends: "18:45"},
+                                           {name: "Normal", level: "", starts: "19:15", ends: "20:00"},
+                                           {name: "Normal", level: "", starts: "20:30", ends: "21:15"},
+                                           {name: "Virtual", level: "", starts: "21:15", ends: "22:00"}
+                                       ],
+                                       jueves: [
+                                           {name: "Virtual", level: "", starts: "8:00", ends: "8:45"},
+                                           {name: "Normal", level: "", starts: "9:30", ends: "10:15"},
+                                           {name: "Normal", level: "", starts: "11:15", ends: "12:00"},
+                                           {name: "Virtual", level: "", starts: "15:30", ends: "16:15"},
+                                           {name: "Virtual", level: "", starts: "17:00", ends: "17:45"},
+                                           {name: "Normal", level: "", starts: "19:30", ends: "20:15"},
+                                           {name: "Virtual", level: "", starts: "21:30", ends: "22:15"}
+                                       ],
+                                       viernes: [
+                                           {name: "Normal", level: "", starts: "9:30", ends: "10:15"},
+                                           {name: "Virtual", level: "", starts: "11:00", ends: "11:45"},
+                                           {name: "Virtual", level: "", starts: "14:30", ends: "15:15"},
+                                           {name: "Virtual", level: "", starts: "17:30", ends: "18:15"},
+                                           {name: "Normal", level: "", starts: "19:15", ends: "20:00"},
+                                           {name: "Virtual", level: "", starts: "20:30", ends: "21:15"}
+                                       ],
+                                       sabado: [
+                                           {name: "Virtual", level: "", starts: "10:15", ends: "11:00"},
+                                           {name: "Normal", level: "", starts: "12:30", ends: "13:15"}
+                                       ],
+                                       domingo: [
+                                           {name: "Virtual", level: "", starts: "12:00", ends: "13:00"}
+                                       ]} // ACTIVITIES
+                               }] // SCHEDULES
+                  }] // TERMS
+      }];
+
+      this.centers = function () {
+            var result = [];
+            for (var i=0; i<this.ds.length; i++) {
+                result.push(this.ds[i].name);
+            }
+            return result;
       };
 
-      this.pruebas = scheduleForDictionary(this.dictionary);
+      this.termsForCenter = function (center) {
+            var result = [];
+            for (var i=0; i<this.ds.length; i++) {
+                if (this.ds[i].name == center) {
+                    for (var j=0; j<this.ds[i].terms.length; j++) {
+                        result.push(this.ds[i].terms[j].name);
+                    }
+                }
+            }
+            return result;
+      };
+
+      this.scheduleTypesForCenterAndTerm = function (center, term) {
+            var result = [];
+            for (var i=0; i<this.ds.length; i++) {
+                if (this.ds[i].name == center) {
+                    for (var j=0; j<this.ds[i].terms.length; j++) {
+                        if (this.ds[i].terms[j].name == term) {
+                            for (var k=0; k<this.ds[i].terms[j].schedules.length; k++) {
+                                result.push(this.ds[i].terms[j].schedules[k].name);
+                            }
+                        }
+                    }
+                }
+            }
+            return result;
+      };
+
+      this.scheduleForCenterTermAndScheduleType = function (center, term, type) {
+            for (var i=0; i<this.ds.length; i++) {
+                if (this.ds[i].name == center) {
+                    for (var j=0; j<this.ds[i].terms.length; j++) {
+                        if (this.ds[i].terms[j].name == term) {
+                            for (var k=0; k<this.ds[i].terms[j].schedules.length; k++) {
+                                if (this.ds[i].terms[j].schedules[k].name == type) {
+                                    return scheduleForDictionary(this.ds[i].terms[j].schedules[k]);
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            return [];
+      };
+
+      this.wholeWeek = function (center, term, type) {
+            for (var i=0; i<this.ds.length; i++) {
+                if (this.ds[i].name == center) {
+                    for (var j=0; j<this.ds[i].terms.length; j++) {
+                        if (this.ds[i].terms[j].name == term) {
+                            for (var k=0; k<this.ds[i].terms[j].schedules.length; k++) {
+                                if (this.ds[i].terms[j].schedules[k].name == type) {
+                                    return (this.ds[i].terms[j].schedules[k].days == 7);
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            return false;
+      };
 
       this.datasource = {
           Vallecas: {schedule: {'08 a 09': ['Pilates', 'T-Extreme', 'Tonificación', 'Latinos', 'Zumba', 'Aero-Combat'],

@@ -1,4 +1,41 @@
 <div id="erfg-group-activities" class="container marketing">
+
+    <div class="form-group">
+        <label for="centerSelect">Selecciona uno de nuestros centros</label>
+
+        <select id="centerSelect" class="form-control" ng-model="selectedCenter">
+            <option ng-repeat="center in centers">{{ center }}</option>
+        </select>
+    </div>
+    <hr class="centers-divider">
+
+    <div class="form-group">
+        <label for="centerSelect">Selecciona mes</label>
+
+        <select id="centerSelect" class="form-control" ng-model="selectedTerm">
+            <option ng-repeat="term in terms">{{ term }}</option>
+        </select>
+    </div>
+    <hr class="centers-divider">
+
+    <div class="form-group">
+        <label for="centerSelect">Selecciona tipo</label>
+
+        <select id="centerSelect" class="form-control" ng-model="selectedScheduleType">
+            <option ng-repeat="scheduleType in scheduleTypes">{{ scheduleType }}</option>
+        </select>
+    </div>
+    <hr class="centers-divider">
+
+    <div class="form-group">
+        <label for="centerSelect">Selecciona actividad</label>
+
+        <select id="centerSelect" class="form-control" ng-model="centerModel">
+            <option ng-repeat="center in datasource">{{ center.name }}</option>
+        </select>
+    </div>
+    <hr class="centers-divider">
+
     <div class="table-responsive">
         <table class="table">
             <thead>
@@ -10,10 +47,11 @@
                 <th class="text-center">J</th>
                 <th class="text-center">V</th>
                 <th class="text-center">S</th>
+                <th ng-if="wholeWeek" class="text-center">D</th>
             </tr>
             </thead>
             <tbody>
-                <tr class="quarter-cell" ng-repeat="row in datasource">
+                <tr class="quarter-cell" ng-repeat="row in schedule">
                     <td title="{{ item.tooltip }}" class="{{ item.class }}" rowspan="{{ item.quarters }}" ng-repeat="item in row">
                         <div class="{{ item.class }}"></div>
                         <div class="text-center text">{{ item.text }}</div>
@@ -23,4 +61,3 @@
         </table>
     </div>
 </div>
-
