@@ -1,40 +1,38 @@
 <div id="erfg-group-activities" class="container marketing">
 
-    <div class="form-group">
+    <div ng-show="centersShow" class="form-group">
         <label for="centerSelect">Selecciona uno de nuestros centros</label>
-
         <select id="centerSelect" class="form-control" ng-model="selectedCenter">
             <option ng-repeat="center in centers">{{ center }}</option>
         </select>
+        <hr class="centers-divider">
     </div>
-    <hr class="centers-divider">
 
-    <div class="form-group">
-        <label for="centerSelect">Selecciona mes</label>
-
-        <select id="centerSelect" class="form-control" ng-model="selectedTerm">
+    <div ng-show="termsShow" class="form-group">
+        <label for="termsSelect">Selecciona mes</label>
+        <select id="termsSelect" class="form-control" ng-model="selectedTerm">
             <option ng-repeat="term in terms">{{ term }}</option>
         </select>
+        <hr class="centers-divider">
     </div>
-    <hr class="centers-divider">
 
-    <div class="form-group">
-        <label for="centerSelect">Selecciona tipo</label>
 
-        <select id="centerSelect" class="form-control" ng-model="selectedScheduleType">
+    <div ng-show="scheduleTypesShow" class="form-group">
+        <label for="scheduleTypeSelect">Selecciona grupo de actividades</label>
+        <select id="scheduleTypeSelect" class="form-control" ng-model="selectedScheduleType">
             <option ng-repeat="scheduleType in scheduleTypes">{{ scheduleType }}</option>
         </select>
+        <hr class="centers-divider">
     </div>
-    <hr class="centers-divider">
 
-    <div class="form-group">
-        <label for="centerSelect">Selecciona actividad</label>
-
-        <select id="centerSelect" class="form-control" ng-model="centerModel">
-            <option ng-repeat="center in datasource">{{ center.name }}</option>
+    <div ng-show="activitiesShow" class="form-group">
+        <label for="activitySelect">Resalta una de las actividades</label>
+        <select id="activitySelect" class="form-control" ng-model="selectedActivity">
+            <option>{{ activityDefault }}</option>
+            <option ng-repeat="activity in activities">{{ activity }}</option>
         </select>
+        <hr class="centers-divider">
     </div>
-    <hr class="centers-divider">
 
     <div class="table-responsive">
         <table class="table">
@@ -46,14 +44,14 @@
                 <th class="text-center">X</th>
                 <th class="text-center">J</th>
                 <th class="text-center">V</th>
-                <th class="text-center">S</th>
-                <th ng-if="wholeWeek" class="text-center">D</th>
+                <th ng-show="daysInWeek > 5" class="text-center">S</th>
+                <th ng-show="daysInWeek > 6" class="text-center">D</th>
             </tr>
             </thead>
             <tbody>
                 <tr class="quarter-cell" ng-repeat="row in schedule">
                     <td title="{{ item.tooltip }}" class="{{ item.class }}" rowspan="{{ item.quarters }}" ng-repeat="item in row">
-                        <div class="{{ item.class }}"></div>
+                        <div class="{{ item.class }}" ng-class="{highlight: selectedActivity == item.text}"></div>
                         <div class="text-center text">{{ item.text }}</div>
                     </td>
                 </tr>

@@ -7,7 +7,7 @@ app.controller('GroupActivitiesCtrl', function ($scope, GymDatasource) {
     $scope.selectedCenter = {};
     $scope.center = 'Vallecas';
 
-    $scope.activities = GymDatasource.activities();
+    $scope.activities = GymDatasource.activitiesProv();
     $scope.datasource = GymDatasource.datasource;
 
     $scope.$watch('center', function (newValue) {

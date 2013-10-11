@@ -17,3 +17,23 @@
   background: #c96264;
   color: #f5f5f5;
 }
+
+// Animation for busy selection (highlight)
+
+.busy.highlight-add,
+.busy.highlight-remove {
+  @include single-transition(all, 0.75s, linear, 0s);
+}
+
+.busy.highlight-add,
+.busy.highlight-remove.highlight-remove-active {
+  background: #c96264;
+  color: #f5f5f5;
+}
+
+.busy.highlight,
+.busy.highlight-remove,
+.busy.highlight-add.highlight-add-active {
+  background: $main-color;
+  color: #f5f5f5;
+}

@@ -3,20 +3,54 @@
 angular.module('gymApp')
   .controller('PruebaTablasCtrl', function ($scope, GymDatasource) {
 
-    $scope.centers = GymDatasource.centers();
-    $scope.selectedCenter = $scope.centers[0];
+        function reloadTerms() {
+            $scope.terms = GymDatasource.termsForCenter($scope.selectedCenter);
+            $scope.termsShow = $scope.terms.length > 1;
+            if ($scope.terms.indexOf($scope.selectedTerm) < 0) {
+                $scope.selectedTerm = $scope.terms[0];
+            } else {
+                reloadScheduleTypes();
+            }
+        }
 
-    $scope.terms = GymDatasource.termsForCenter($scope.selectedCenter);
-    $scope.selectedTerm = $scope.terms[0];
+        function reloadScheduleTypes() {
+            $scope.scheduleTypes = GymDatasource.scheduleTypesForCenterAndTerm($scope.selectedCenter, $scope.selectedTerm);
+            $scope.scheduleTypesShow = $scope.scheduleTypes.length > 1;
+            if ($scope.scheduleTypes.indexOf($scope.selectedScheduleType) < 0) {
+                $scope.selectedScheduleType = $scope.scheduleTypes[0];
+            } else {
+                reloadScheduleAndActivities();
+            }
+        }
 
-    $scope.scheduleTypes = GymDatasource.scheduleTypesForCenterAndTerm($scope.selectedCenter, $scope.selectedTerm);
-    $scope.selectedScheduleType = $scope.scheduleTypes[0];
+        function reloadScheduleAndActivities(){
+            $scope.daysInWeek = GymDatasource.daysInWeek($scope.selectedCenter, $scope.selectedTerm, $scope.selectedScheduleType);
+            $scope.schedule = GymDatasource.scheduleForCenterTermAndScheduleType($scope.selectedCenter, $scope.selectedTerm, $scope.selectedScheduleType);
+            $scope.activities = GymDatasource.activities($scope.selectedCenter, $scope.selectedTerm, $scope.selectedScheduleType);
+            $scope.activitiesShow = $scope.activities.length > 1;
+            if ($scope.activities.indexOf($scope.selectedActivity) < 0) {
+                $scope.selectedActivity = $scope.activityDefault;
+            }
+        }
 
-    $scope.wholeWeek = GymDatasource.wholeWeek($scope.selectedCenter, $scope.selectedTerm, $scope.selectedScheduleType);
-    $scope.schedule = GymDatasource.scheduleForCenterTermAndScheduleType($scope.selectedCenter, $scope.selectedTerm, $scope.selectedScheduleType);
+        $scope.activityDefault = "Selecciona la actividad a resaltar";
 
-    $scope.$watch('selectedScheduleType', function (newValue) {
-        $scope.wholeWeek = GymDatasource.wholeWeek($scope.selectedCenter, $scope.selectedTerm, $scope.selectedScheduleType);
-        $scope.schedule = GymDatasource.scheduleForCenterTermAndScheduleType($scope.selectedCenter, $scope.selectedTerm, $scope.selectedScheduleType);
-    });
+        $scope.centers = GymDatasource.centers();
+        $scope.centersShow = $scope.centers.length > 1;
+        $scope.selectedCenter = $scope.centers[0];
+
+        $scope.$watch('selectedCenter', function (newValue) {
+            console.log("selectedCenter");
+            reloadTerms();
+        });
+
+        $scope.$watch('selectedTerm', function (newValue) {
+            console.log("selectedTerm");
+            reloadScheduleTypes();
+        });
+
+        $scope.$watch('selectedScheduleType', function (newValue) {
+            console.log("selectedScheduleType");
+            reloadScheduleAndActivities();
+        });
 });
