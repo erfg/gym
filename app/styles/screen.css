@@ -59,6 +59,22 @@ erfg-map, .erfg-map {
   box-shadow: 0 0 2px 2px #bf8c98;
 }
 
+/* line 9, ../sass/partials/_figures.scss */
+#contact-info {
+  margin-top: 15px;
+}
+
+/* line 13, ../sass/partials/_figures.scss */
+address {
+  display: inline-block;
+  margin: 0;
+}
+
+/* line 18, ../sass/partials/_figures.scss */
+#phone-block {
+  display: block;
+}
+
 /* line 2, ../sass/partials/_footer.scss */
 footer {
   margin-top: 30px;
@@ -184,12 +200,19 @@ body {
 }
 
 /* line 22, ../sass/screen.scss */
+#erfg-prices {
+  background: #fafafa;
+  padding: 30px;
+  margin-top: 10px;
+}
+
+/* line 28, ../sass/screen.scss */
 .marketing {
   border-radius: 10px;
   box-shadow: inset 0 0 8px #000000;
 }
 
-/* line 27, ../sass/screen.scss */
+/* line 33, ../sass/screen.scss */
 .centers-divider {
   margin: 20px 0;
 }

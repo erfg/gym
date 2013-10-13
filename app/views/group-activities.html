@@ -1,50 +1,79 @@
 <div id="erfg-group-activities" class="container marketing">
     <h1>Nuestros centros</h1>
     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris ut pulvinar massa. Phasellus in leo justo. Curabitur tincidunt eros sit amet eros malesuada, iaculis pharetra lorem aliquet. Interdum et malesuada fames ac ante ipsum primis in faucibus. Aenean quis urna ut neque posuere dictum at ut odio. Nam rhoncus, purus sit amet molestie venenatis, justo odio volutpat ligula, id egestas enim eros vel metus. Ut vel euismod quam. Duis urna lacus, adipiscing id libero non, bibendum ultricies purus. Duis iaculis, nunc nec dictum iaculis, magna justo rutrum elit, imperdiet adipiscing leo metus quis eros.</p>
-    <div class="form-group">
-        <label for="centerSelect">Selecciona uno de nuestros centros</label>
 
-        <select id="centerSelect" class="form-control" ng-model="center">
-            <option ng-repeat="(keyCenter,valCenter) in datasource">{{ keyCenter }}</option>
+
+    <div ng-show="centersShow" class="form-group">
+        <label for="centerSelect">Selecciona uno de nuestros centros</label>
+        <select id="centerSelect" class="form-control" ng-model="selectedCenter">
+            <option ng-repeat="center in centers">{{ center }}</option>
         </select>
+        <hr class="centers-divider">
+    </div>
+
+    <h1>Dónde estamos</h1>
+    <erfg-map location="contactInfoForCenter.location"></erfg-map>
+
+    <div id="contact-info">
+        <label for="center-address">Dirección: </label>
+        <address id="center-address">{{contactInfoForCenter.address}}</address>
+        <div id="phone-block">
+            <label for="center-phone">Teléfono: </label>
+            <a id="center-phone" href="tel:{{contactInfoForCenter.phone}}">{{contactInfoForCenter.phone}}</a>
+            <span ng-show="contactInfoForCenter.extraPhone"> - </span>
+            <a ng-show="contactInfoForCenter.extraPhone" id="extra-phone" href="tel:{{contactInfoForCenter.extraPhone}}">{{contactInfoForCenter.extraPhone}}</a>
+        </div>
     </div>
     <hr class="centers-divider">
     <h1>Clases colectivas</h1>
 
-    <div class="row">
-        <div class="form-group col-md-6">
-            <label for="activityTypeSelect">Selecciona un grupo de clases</label>
-            <select id="activityTypeSelect" class="form-control" ng-model="center">
-                <option ng-repeat="(keyCenter,valCenter) in datasource">{{ keyCenter }}</option>
-            </select>
-        </div>
-        <div class="form-group col-md-6">
-            <label for="activitySelect">Resalta una de las actividades</label>
-            <select id="activitySelect" class="form-control" ng-model="selectedActivity">
-                <option>Selecciona la actividad a resaltar</option>
-                <option ng-repeat="activity in activities">{{ activity }}</option>
-            </select>
-        </div>
+    <div ng-show="termsShow" class="form-group">
+        <label for="termsSelect">Selecciona mes</label>
+        <select id="termsSelect" class="form-control" ng-model="selectedTerm">
+            <option ng-repeat="term in terms">{{ term }}</option>
+        </select>
+        <hr class="centers-divider">
     </div>
 
-    <hr class="centers-divider">
+
+    <div ng-show="scheduleTypesShow" class="form-group">
+        <label for="scheduleTypeSelect">Selecciona grupo de actividades</label>
+        <select id="scheduleTypeSelect" class="form-control" ng-model="selectedScheduleType">
+            <option ng-repeat="scheduleType in scheduleTypes">{{ scheduleType }}</option>
+        </select>
+        <hr class="centers-divider">
+    </div>
+
+    <div ng-show="activitiesShow" class="form-group">
+        <label for="activitySelect">Resalta una de las actividades</label>
+        <select id="activitySelect" class="form-control" ng-model="selectedActivity">
+            <option>{{ activityDefault }}</option>
+            <option ng-repeat="activity in activities">{{ activity }}</option>
+        </select>
+        <hr class="centers-divider">
+    </div>
+
     <div class="table-responsive">
-        <table class="table table-condensed">
+        <table class="table">
             <thead>
             <tr>
                 <th class="text-center hour"></th>
-                <th class="text-center" >L</th>
+                <th class="text-center">L</th>
                 <th class="text-center">M</th>
                 <th class="text-center">X</th>
                 <th class="text-center">J</th>
                 <th class="text-center">V</th>
-                <th class="text-center">S</th>
+                <th ng-show="daysInWeek > 5" class="text-center">S</th>
+                <th ng-show="daysInWeek > 6" class="text-center">D</th>
             </tr>
             </thead>
             <tbody>
-            <tr ng-repeat="(key,val) in selectedCenter.schedule">
-                <td class="text-center">{{ key }}</td>
-                <td class="text-center group-activity" ng-class="{highlight: selectedActivity == activity}" ng-repeat="activity in val track by $index">{{ activity }}</td>
+            <tr class="quarter-cell" ng-repeat="row in schedule">
+                <td title="{{ item.tooltip }}" class="{{ item.class }}" rowspan="{{ item.quarters }}"
+                    ng-repeat="item in row">
+                    <div class="{{ item.class }}" ng-class="{highlight: selectedActivity == item.text}"></div>
+                    <div class="text-center text">{{ item.text }}</div>
+                </td>
             </tr>
             </tbody>
         </table>
@@ -54,9 +83,4 @@
         <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
         Sport Extreme se reserva el derecho de cambiar o modificar tanto el horario del centro, como de las clases y los monitores de las mismas.
     </div>
-
-    <hr class="centers-divider">
-    <h1>Dónde estamos</h1>
-    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-    <erfg-map location="selectedCenter.location"></erfg-map>
 </div>

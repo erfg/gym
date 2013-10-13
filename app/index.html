@@ -35,7 +35,7 @@
     <![endif]-->
 
     <!-- Add your site or application content here -->
-    <div class="navbar-wrapper">
+    <div class="navbar-wrapper" ng-controller="NavbarCtrl">
         <div class="container">
 
             <div class="navbar navbar-default navbar-static-top">
@@ -50,10 +50,9 @@
                     </div>
                     <div class="navbar-collapse collapse">
                         <ul class="nav navbar-nav">
-                            <li class="active"><a href="#">Inicio</a></li>
-                            <li><a href="#group-activities">Centros</a></li>
-                            <li><a href="#where-we-are">Nuestros precios</a></li>
-                            <li><a href="#prueba-tablas">Tabla</a></li>
+                            <li ng-class="{active: selectedTab == '/'}"><a href="#">Inicio</a></li>
+                            <li ng-class="{active: selectedTab == '/group-activities'}"><a href="#group-activities">Nuestros centros</a></li>
+                            <li ng-class="{active: selectedTab == '/prices'}"><a href="#prices">Nuestros precios</a></li>
                         </ul>
                     </div>
                 </div>
@@ -101,7 +100,8 @@
     <script src="scripts/directives/erfg-map.js"></script>
     <script src="scripts/services/Google-Maps.js"></script>
     <script src="scripts/services/Gym-Datasource.js"></script>
-    <script src="scripts/controllers/prueba-tablas.js"></script>
+    <script src="scripts/controllers/prices.js"></script>
+    <script src="scripts/controllers/navbar.js"></script>
     <!-- endbuild -->
 </body>
 </html>

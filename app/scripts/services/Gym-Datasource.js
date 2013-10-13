@@ -103,6 +103,11 @@ angular.module('gymApp')
       }
 
       this.ds = [{name: "Fuenlabrada",
+                  contact: {
+                      location: {longitude: '-3.8015279', latitude: '40.2781072'},
+                      address: "Calle Luis Sauquillo, 80",
+                      phone: "916978915"
+                  },
                   terms: [{name: "Octubre",
                            schedules: [{
                               name: "Clases colectivas",
@@ -229,7 +234,12 @@ angular.module('gymApp')
                   }] // TERMS
       },
           {name: "Moratalaz",
-              terms: [
+           contact: {
+              location: {longitude: '-3.6466968', latitude: '40.4079307'},
+              address: "Avda. de Moratalaz, 110",
+              phone: "914372008"
+           },
+           terms: [
                   {name: "Octubre",
                       schedules: [
                           {
@@ -317,7 +327,13 @@ angular.module('gymApp')
               ] // TERMS
           },
           {name: "Vallecas",
-              terms: [
+           contact:{
+              location: {longitude: '-3.6498084', latitude: '40.3819613'},
+              address: "Avda. Pablo Neruda, 63",
+              phone: "917777256",
+              extraPhone: "913800819"
+           },
+           terms: [
                   {name: "Octubre",
                       schedules: [
                           {
@@ -409,48 +425,49 @@ angular.module('gymApp')
                           {
                               name: "Clases colectivas",
                               subdivisionMinutes: 15,
-                              days: 5,
-                              startingAt: "10:00",
+                              days: 6,
+                              startingAt: "9:00",
                               endingAt: "22:00",
                               activities: {
                                   lunes: [
-                                      {name: "Body Tonic", prov: false, level: "", starts: "10:00", ends: "11:00"},
-                                      {name: "Abdominales", prov: false, level: "", starts: "17:15", ends: "17:45"},
-                                      {name: "Body Tonic", prov: false, level: "", starts: "18:30", ends: "19:15"},
-                                      {name: "Cardiobox", prov: false, level: "", starts: "19:15", ends: "20:00"},
+                                      {name: "Zumba", prov: false, level: "", starts: "10:00", ends: "11:00"},
+                                      {name: "Pilates", prov: false, level: "", starts: "11:00", ends: "12:00"},
+                                      {name: "Funky", prov: false, level: "Principiantes", starts: "18:00", ends: "19:00"},
+                                      {name: "Tonificación", prov: false, level: "", starts: "19:00", ends: "20:00"},
                                       {name: "Abdominales", prov: false, level: "", starts: "20:00", ends: "20:30"},
-                                      {name: "Step", prov: false, level: "", starts: "20:30", ends: "21:15"}
+                                      {name: "Aerodance", prov: false, level: "", starts: "20:30", ends: "21:30"}
                                   ],
                                   martes: [
                                       {name: "Pilates", prov: false, level: "", starts: "10:00", ends: "11:00"},
-                                      {name: "Tonificación", prov: false, level: "", starts: "11:00", ends: "12:00"},
-                                      {name: "Boot-Camp", prov: false, level: "", starts: "14:30", ends: "15:15"},
-                                      {name: "Pilates", prov: false, level: "", starts: "18:00", ends: "19:00"},
-                                      {name: "Cross-Fit", prov: false, level: "", starts: "19:15", ends: "20:00"},
-                                      {name: "Zumba", prov: false, level: "", starts: "20:00", ends: "20:45"},
-                                      {name: "Kick-Boxing", prov: false, level: "", starts: "21:00", ends: "22:00"}
+                                      {name: "Tonificación", prov: false, level: "", starts: "14:30", ends: "15:30"},
+                                      {name: "Body Tonic", prov: false, level: "", starts: "18:15", ends: "19:00"},
+                                      {name: "Pilates", prov: false, level: "", starts: "19:00", ends: "20:00"},
+                                      {name: "Zumba", prov: false, level: "", starts: "20:00", ends: "21:00"},
+                                      {name: "Aerobox", prov: false, level: "", starts: "21:00", ends: "21:45"}
                                   ],
                                   miercoles: [
-                                      {name: "Zumba", prov: false, level: "", starts: "10:00", ends: "11:00"},
-                                      {name: "Abdominales", prov: false, level: "", starts: "17:15", ends: "17:45"},
-                                      {name: "Boot-Camp", prov: false, level: "", starts: "18:30", ends: "19:15"},
-                                      {name: "Zumba", prov: false, level: "", starts: "19:15", ends: "20:00"},
+                                      {name: "Alto Impacto", prov: false, level: "", starts: "10:00", ends: "11:00"},
+                                      {name: "Pilates", prov: false, level: "Nivel Alto", starts: "11:00", ends: "12:00"},
+                                      {name: "Funky", prov: false, level: "", starts: "18:00", ends: "19:00"},
+                                      {name: "Tonificación", prov: false, level: "", starts: "19:00", ends: "20:00"},
                                       {name: "Abdominales", prov: false, level: "", starts: "20:00", ends: "20:30"},
-                                      {name: "Aerodance", prov: false, level: "", starts: "20:30", ends: "21:15"}
+                                      {name: "Step", prov: false, level: "", starts: "20:30", ends: "21:30"}
                                   ],
                                   jueves: [
                                       {name: "Pilates", prov: false, level: "", starts: "10:00", ends: "11:00"},
-                                      {name: "Step", prov: false, level: "", starts: "11:00", ends: "12:00"},
-                                      {name: "Tonificación", prov: false, level: "", starts: "14:30", ends: "15:15"},
-                                      {name: "Pilates", prov: false, level: "", starts: "18:00", ends: "19:00"},
-                                      {name: "Cross-Fit", prov: false, level: "", starts: "20:00", ends: "20:45"},
-                                      {name: "Kick-Boxing", prov: false, level: "", starts: "21:00", ends: "22:00"}
+                                      {name: "Zumba", prov: false, level: "", starts: "14:30", ends: "15:30"},
+                                      {name: "GAP", prov: false, level: "", starts: "18:15", ends: "19:00"},
+                                      {name: "Pilates", prov: false, level: "", starts: "19:00", ends: "20:00"},
+                                      {name: "Zumba", prov: false, level: "", starts: "20:00", ends: "21:00"},
+                                      {name: "Body Tonic", prov: false, level: "", starts: "21:00", ends: "21:45"}
                                   ],
                                   viernes: [
-                                      {name: "GAP", prov: false, level: "", starts: "11:00", ends: "11:45"},
-                                      {name: "Abdominales", prov: false, level: "", starts: "17:15", ends: "17:45"},
-                                      {name: "Tonificación", prov: false, level: "", starts: "19:00", ends: "20:00"},
-                                      {name: "Abdominales", prov: false, level: "", starts: "20:00", ends: "20:30"}
+                                      {name: "Zumba", prov: false, level: "", starts: "10:00", ends: "11:00"},
+                                      {name: "Body Tonic", prov: false, level: "", starts: "11:00", ends: "12:00"},
+                                      {name: "Step", prov: false, level: "Nivel Alto", starts: "18:30", ends: "19:30"}
+                                  ],
+                                  sabado: [
+                                      {name: "Tonificación", prov: false, level: "", starts: "12:00", ends: "13:00"}
                                   ]} // ACTIVITIES
                           },
                           {
@@ -511,6 +528,15 @@ angular.module('gymApp')
                 }
             }
             return result;
+      };
+
+      this.contactInfoForCenter = function (center) {
+            for (var i=0; i<this.ds.length; i++) {
+                if (this.ds[i].name === center) {
+                    return this.ds[i].contact;
+                }
+            }
+            return {};
       };
 
       this.scheduleTypesForCenterAndTerm = function (center, term) {

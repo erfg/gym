@@ -5,3 +5,16 @@ erfg-map, .erfg-map {
   margin-top: 30px;
   @include box-shadow(0 0 2px 2px #BF8C98);
 }
+
+#contact-info {
+  margin-top: 15px;
+}
+
+address {
+  display: inline-block;
+  margin: 0;
+}
+
+#phone-block {
+  display: block;
+}
