@@ -5,4 +5,4 @@ angular.module('gymApp')
     $scope.$on('$routeChangeSuccess', function(){
         $scope.selectedTab = $location.path();
     });
-  });
+});
