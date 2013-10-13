@@ -3,5 +3,6 @@
 angular.module('gymApp')
   .controller('MainCtrl', function ($scope) {
 
+//        $('.carousel').carousel();
 
-  });
+    });

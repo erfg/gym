@@ -13,7 +13,8 @@
 
       <!-- build:css(.tmp) styles/main.css -->
       <link href='http://fonts.googleapis.com/css?family=Bubbler+One&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
-      <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css">
+      <!--<link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css">-->
+      <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet">
       <link rel="stylesheet" href="styles/extra.css">
 
       <!-- compass links -->
@@ -96,13 +97,17 @@
 
     <!-- build:js({.tmp,app}) scripts/scripts.js -->
     <script src="scripts/app.js"></script>
+
     <script src="scripts/controllers/main.js"></script>
     <script src="scripts/controllers/group-activities.js"></script>
-    <script src="scripts/directives/erfg-map.js"></script>
-    <script src="scripts/services/Google-Maps.js"></script>
-    <script src="scripts/services/Gym-Datasource.js"></script>
     <script src="scripts/controllers/prices.js"></script>
     <script src="scripts/controllers/navbar.js"></script>
+
+    <script src="scripts/directives/erfg-map.js"></script>
+    <script src="scripts/directives/carousel.js"></script>
+    <script src="scripts/services/Google-Maps.js"></script>
+    <script src="scripts/services/Gym-Datasource.js"></script>
+
     <!-- endbuild -->
     <script src="scripts/extra.js"></script>
   </body>
